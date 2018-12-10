@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block name %}{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url "main" %}">На главную</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>Выбранный продукт:</h1>
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Cost: {{ product.cost }}</p>
+{% endblock %}

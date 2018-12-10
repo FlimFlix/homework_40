@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block name %}Create{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url "main" %}">На главную</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>Добавление товара</h1>
+
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+
+        <label>Наименование:</label><br/>
+        <input type="text" name="name"/><br/>
+
+        <label>Описание:</label><br/>
+        <textarea name="description"></textarea><br/>
+
+        <label>Стоимость:</label><br/>
+        <input type="number" step="any" name="cost"/><br/>
+        <br/>
+
+        <input type="submit" value="Добавить"/>
+    </form>
+{% endblock %}
+
